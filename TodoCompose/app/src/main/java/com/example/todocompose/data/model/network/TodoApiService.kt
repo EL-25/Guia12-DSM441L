@@ -9,4 +9,10 @@ interface TodoApiService {
 
     @POST("/to-do")
     suspend fun addTodo(@Body todo: Todo): Todo
+
+    @PUT("/to-do/{id}")
+    suspend fun updateTodo(@Path("id") id: String, @Body todo: Todo): Todo
+
+    @DELETE("/to-do/{id}")
+    suspend fun deleteTodo(@Path("id") id: String): Todo
 }

@@ -10,4 +10,12 @@ class TodoRepository(private val api: TodoApiService) {
     suspend fun addTodo(todo: Todo): Todo {
         return api.addTodo(todo)
     }
+
+    suspend fun updateTodo(todo: Todo): Todo {
+        return api.updateTodo(todo.id, todo)
+    }
+
+    suspend fun deleteTodo(id: String): Todo {
+        return api.deleteTodo(id)
+    }
 }

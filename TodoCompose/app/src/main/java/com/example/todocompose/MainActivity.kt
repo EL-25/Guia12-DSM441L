@@ -23,7 +23,9 @@ class MainActivity : ComponentActivity() {
         val repository = TodoRepository(apiService)
         val viewModel = TodoViewModel(repository)
         setContent {
-            TodoScreen(viewModel)
+            com.example.todocompose.ui.theme.TodoComposeTheme {
+                TodoScreen(viewModel)
+            }
         }
     }
 }
